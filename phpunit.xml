@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ FakerLocRelTypes, rfc4589 Location and rfc8288 relation types generate using fakerphp/faker.
+
+ This file is a part of FakerLocRelTypes.
+
+ author    Kjell-Inge Gustafsson, kigkonsult <ical@kigkonsult.se>
+ copyright 2007-2022 Kjell-Inge Gustafsson, kigkonsult, All rights reserved
+ link      https://kigkonsult.se
+ license   Subject matter of licence is the software FakerLocRelTypes.
+           The above author, copyright, link and licence notices shall be
+           included in all copies or substantial portions of the FakerLocRelTypes.
+
+           FakerLocRelTypes is free software: you can redistribute it and/or modify
+           it under the terms of the GNU Lesser General Public License as
+           published by the Free Software Foundation, either version 3 of
+           the License, or (at your option) any later version.
+
+           FakerLocRelTypes is distributed in the hope that it will be useful,
+           but WITHOUT ANY WARRANTY; without even the implied warranty of
+           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+           GNU Lesser General Public License for more details.
+
+           You should have received a copy of the GNU Lesser General Public License
+           along with FakerLocRelTypes. If not, see <https://www.gnu.org/licenses/>.
+-->
+<phpunit bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="true"
+         stopOnFailure="false"
+         verbose="true">
+    <testsuites>
+        <testsuite name="Faker Location-/relationTypes Tests">
+            <directory>test</directory>
+        </testsuite>
+    </testsuites>
+    <coverage>
+        <include>
+            <directory>./src</directory>
+        </include>
+        <exclude>
+            <directory>./test</directory>
+            <directory>./testDocs</directory>
+            <directory>./vendor</directory>
+        </exclude>
+        <!-- Require the PHP Xdebug (2.7.0 or later) and tokenizer extensions-->
+        <!-- Remove or comment after your own choice-->
+        <!-- Note, all output in report/logging will be saved in 'testDocs' folder -->
+        <report>
+            <!-- clover outputFile="testDocs/clover.xml"/ -->
+            <!-- crap4j outputFile="testDocs/crap4j.xml" threshold="50"/ -->
+            <html outputDirectory="testDocs/PHPUnitCoverage" lowUpperBound="60" highLowerBound="80"/>
+            <php outputFile="testDocs/coverage.php"/>
+            <text outputFile="testDocs/coverage.txt" showUncoveredFiles="false" showOnlySummary="false"/>
+            <!-- xml outputDirectory="testDocs/xml-coverage"/ -->
+        </report>
+    </coverage>
+    <logging>
+        <!-- Remove or comment after your own choice-->
+        <!-- All logs will be saved in 'testDocs' folder -->
+
+        <!-- junit outputFile="testDocs/junit.xml"/ -->
+        <!-- teamcity outputFile="testDocs/teamcity.txt"/ -->
+        <!-- testdoxHtml outputFile="testDocs/testdox.html"/ -->
+        <!-- testdoxText outputFile="testDocs/testdox.txt"/ -->
+        <!-- testdoxXml outputFile="testDocs/testdox.xml"/ -->
+        <text outputFile="testDocs/logfile.txt"/>
+    </logging>
+</phpunit>
