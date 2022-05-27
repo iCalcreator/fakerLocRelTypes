@@ -1,14 +1,14 @@
 <?php
 /**
- * FakerLocRelTypes, rfc4589 Location and rfc8288 relation types generate using fakerphp/faker.
+ * Location-, Relation- and Incident Object report enumeration types for PHP Faker
  *
- * This file is a part of FakerLocRelTypes.
+ * This file is a part of FakerLocRelTypes
  *
  * @author    Kjell-Inge Gustafsson, kigkonsult <ical@kigkonsult.se>
- * @copyright 2007-2022 Kjell-Inge Gustafsson, kigkonsult, All rights reserved
+ * @copyright 2022 Kjell-Inge Gustafsson, kigkonsult, All rights reserved
  * @link      https://kigkonsult.se
  * @license   Subject matter of licence is the software FakerLocRelTypes.
- *            The above author, copyright, link and licence notices shall be
+ *            The above author, copyright, link and this licence notices shall be
  *            included in all copies or substantial portions of the FakerLocRelTypes.
  *
  *            FakerLocRelTypes is free software: you can redistribute it and/or

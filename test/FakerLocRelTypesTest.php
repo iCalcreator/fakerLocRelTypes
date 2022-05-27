@@ -1,14 +1,14 @@
 <?php
 /**
- * FakerLocRelTypes, rfc4589 Location and rfc8288 relation types generate using fakerphp/faker.
+ * Location-, Relation- and Incident Object report enumeration types for PHP Faker
  *
- * This file is a part of FakerLocRelTypes.
+ * This file is a part of FakerLocRelTypes
  *
  * @author    Kjell-Inge Gustafsson, kigkonsult <ical@kigkonsult.se>
- * @copyright 2007-2022 Kjell-Inge Gustafsson, kigkonsult, All rights reserved
+ * @copyright 2022 Kjell-Inge Gustafsson, kigkonsult, All rights reserved
  * @link      https://kigkonsult.se
  * @license   Subject matter of licence is the software FakerLocRelTypes.
- *            The above author, copyright, link and licence notices shall be
+ *            The above author, copyright, link and this licence notices shall be
  *            included in all copies or substantial portions of the FakerLocRelTypes.
  *
  *            FakerLocRelTypes is free software: you can redistribute it and/or
@@ -31,27 +31,52 @@ use PHPUnit\Framework\TestCase;
 
 class FakerLocRelTypesTest extends TestCase
 {
+    /**
+     * @var string
+     */
+    protected static $CLASSPREFIX = 'Kigkonsult\FakerLocRelTypes\Provider\\';
+
+    /**
+     * @var array|false
+     */
     protected $folder;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
-        $this->folder = array_diff( scandir( 'src/Provider' ), [ '..', '.' ] );
+        static $DIR   = 'src/Provider';
+        static $EXCL  = [ '..', '.' ];
+        $this->folder = array_diff( scandir( $DIR ), $EXCL );
     }
 
+    /**
+     * Test loctionTypes
+     *
+     * @return void
+     */
     public function testLoctionTypesInAllLanguages(): void
     {
+        static $CLASSTOTEST = '\LocationTypes';
         foreach( $this->folder as $folder ) {
-            $class = 'Kigkonsult\FakerLocRelTypes\Provider\\'.$folder.'\LocationTypes';
+            $class = self::$CLASSPREFIX . $folder . $CLASSTOTEST;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
             $this->assertIsString( $faker->locationType());
         } // end foreach
     }
 
+    /**
+     * Test relationTypes
+     *
+     * @return void
+     */
     public function testRelationTypesInAllLanguages(): void
     {
+        static $CLASSTOTEST = '\RelationTypes';
         foreach( $this->folder as $folder ) {
-            $class = 'Kigkonsult\FakerLocRelTypes\Provider\\'.$folder.'\RelationTypes';
+            $class = self::$CLASSPREFIX . $folder . $CLASSTOTEST;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
             $this->assertIsString( $faker->relationType());
