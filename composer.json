@@ -1,12 +1,19 @@
 {
   "name": "kigkonsult/fakerlocreltypes",
-  "description": "rfc4589 location and rfc8288 relation types generate using fakerphp/faker",
+
+  "description": "Location-, Relation- and Incident Object report enumeration types for PHP Faker",
   "keywords": [
-    "Faker",
+    "faker",
     "generator",
     "location",
     "relation",
+    "incident",
+    "object",
+    "report",
+    "enumeration",
+    "types",
     "rfc4589",
+    "rfc7970",
     "rfc8288"
   ],
   "minimum-stability": "stable",
