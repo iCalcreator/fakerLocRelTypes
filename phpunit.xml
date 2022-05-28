@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Location-, Relation- and Incident Object report enumeration types for PHP Faker
+ Location-, Relation- and Incident Object Report enumeration types for PHP Faker
 
  This file is a part of FakerLocRelTypes
 
@@ -35,18 +35,21 @@
          stopOnFailure="false"
          verbose="true">
     <testsuites>
-        <testsuite name="Faker Location-/relationTypes Tests">
-            <directory>test</directory>
+        <testsuite name="The Tests">
+            <file>./test/FakerRfc4589LocationTest.php</file>
+            <file>./test/FakerRfc7970enumsTest.php</file>
+            <file>./test/FakerRfc8288RelationTest.php</file>
         </testsuite>
     </testsuites>
     <coverage>
         <include>
-            <directory>./src</directory>
+            <file>./src/Provider/en_US/Rfc4589LocationTypes.php</file>
+            <file>./src/Provider/en_US/Rfc7970enums.php</file>
+            <file>./src/Provider/en_US/Rfc8288RelationTypes.php</file>
         </include>
         <exclude>
-            <directory>./test</directory>
-            <directory>./testDocs</directory>
-            <directory>./vendor</directory>
+            <file>./src/Provider/en_US/LocationTypes.php</file>
+            <file>./src/Provider/en_US/RelationTypes.php</file>
         </exclude>
         <!-- Require the PHP Xdebug (2.7.0 or later) and tokenizer extensions-->
         <!-- Remove or comment after your own choice-->
@@ -63,7 +66,6 @@
     <logging>
         <!-- Remove or comment after your own choice-->
         <!-- All logs will be saved in 'testDocs' folder -->
-
         <!-- junit outputFile="testDocs/junit.xml"/ -->
         <!-- teamcity outputFile="testDocs/teamcity.txt"/ -->
         <!-- testdoxHtml outputFile="testDocs/testdox.html"/ -->

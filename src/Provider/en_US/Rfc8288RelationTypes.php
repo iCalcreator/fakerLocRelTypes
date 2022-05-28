@@ -28,14 +28,7 @@ namespace Kigkonsult\FakerLocRelTypes\Provider\en_US;
 
 use Faker\Provider\Base as FakerBase;
 
-/**
- * class RelationTypes
- *
- * replaced by Rfc8288RelationTypes
- * @deprecated
- * @codeCoverageIgnore
- */
-class RelationTypes extends FakerBase
+class Rfc8288RelationTypes extends FakerBase
 {
     /**
      * Link Relation Types as found in 'Link Relation Types', https://www.iana.org/assignments/link-relations/link-relations.xhtml
@@ -179,6 +172,16 @@ class RelationTypes extends FakerBase
      * @codeCoverageIgnore
      */
     public function relationType() : string
+    {
+        return static::randomElement( static::$relationTypes );
+    }
+
+    /**
+     * A random rfc8288 relation type.
+     *
+     * @return string
+     */
+    public function rfc8288RelationType() : string
     {
         return static::randomElement( static::$relationTypes );
     }

@@ -1,5 +1,5 @@
 
-> Location-, Relation- and Incident Object report enumeration types for PHP Faker
+> Location-, Relation- and Incident Object Report enumeration types for PHP Faker
 >
 * Location types as found in [rfc4589] 'Location Types Registry'
   * "the types of places a human or end system might be found"
@@ -10,59 +10,72 @@
   and the type of those relationships"
     
 * Report enumeration values defined by Incident Object Description Exchange Format ([rfc7970]), 
-  and as found in [iana.org/iodef2] : 
-  * Restriction,Incident-purpose,Incident-status,Contact-role,Contact-type,
-  RegistryHandle-registry,PostalAddress-type,Telephone-type,Email-type,
-  Expectation-action,Discovery-source,SystemImpact-type,BusinessImpact-severity,
-  BusinessImpact-type,TimeImpact-metric,TimeImpact-duration,Confidence-rating,
-  NodeRole-category,System-category,System-ownership,Address-category,Counter-type,
-  Counter-unit,DomainData-system-status,DomainData-domain-status,RecordPattern-type,
-  RecordPattern-offsetunit,Key-registryaction,HashData-scope,BulkObservable-type,
-  IndicatorExpression-operator,ExtensionType-dtype,SoftwareReference-spec-id,SoftwareReference-dtype
+  * as found in [iana.org/iodef2]
 
-Installation
-------------
-
-Add the FakerLocRelTypes library to your `composer.json` file:
-
-```
-composer require kigkonsult/fakerlocreltypes
-```
-
-Usage
------
+#### Usage
 
 To use this with [Faker], invoke the `Kigkonsult\FakerLocRelTypes` classes as Faker generators.
 
+###### Rfc4589
+
+
+Rfc4589LocationTypes has only one generator.
+For details, please review [rfc4589].
 ```php
 <?php
 
 use Faker\Factory;
-use Kigkonsult\FakerLocRelTypes\Provider\en_US\LocationTypes;
+use Kigkonsult\FakerLocRelTypes\Provider\en_US\Rfc4589LocationTypes;
 
 $faker = Factory::create();
-$faker->addProvider( new LocationTypes( $faker ));
+$faker->addProvider( new Rfc4589LocationTypes( $faker ));
 
 // Generator
 // a random rfc4589 Place Location Type
-$locationType = $faker->locationType();
+$locationType = $faker->rfc4589LcationType();
 
 ```
+###### Rfc8288
+
+Rfc8288RelationTypes has only one generator.
+For details, please review [Link Relation Types].
 
 ```php
 <?php
 
 use Faker\Factory;
-use Kigkonsult\FakerLocRelTypes\Provider\en_US\RelationTypes;
+use Kigkonsult\FakerLocRelTypes\Provider\en_US\Rfc8288RelationTypes;
 
 $faker = Factory::create();
-$faker->addProvider( new RelationTypes( $faker ));
+$faker->addProvider( new Rfc8288RelationTypes( $faker ));
 
 // Generator
 // a random rfc8288 Web Relation Type
-$relationType = $faker->relationType();
+$relationType = $faker->rc8288RelationType();
 
 ```
+
+###### Rfc7970 
+Rfc7970enums has 38 generators (all prefixed by _rfc7970_) :
+
+<table>
+<tr><td>AddressCategory<td>EmailType<td>RecordPatternType
+<tr><td>BulkObservableType<td>ExpectationAction<td>RegistryHandleRegistry
+<tr><td>BusinessImpactSeverity<td>ExtensionTypeDtype<td>Restriction
+<tr><td>BusinessImpactType<td>HashDataScope<td>SoftwareReferenceSpecId
+<tr><td>ConfidenceRating<td>HistoryItemAction<td>SoftwareReferenceDtype
+<tr><td>ContactRole<td>IncidentPurpose<td>SoftwareReferenceSpecName
+<tr><td>ContactType<td>IncidentStatus<td>SystemCategory
+<tr><td>CounterDuration<td>IndicatorExpressionOperator<td>SystemImpactType
+<tr><td>CounterType<td>IntendedImpactType<td>SystemOwnership
+<tr><td>CounterUnit<td>KeyRegistryaction<td>Telephone-type
+<tr><td>DiscoverySource<td>NodeRoleCategory<td>TimeImpactDuration
+<tr><td>DomainDataDomainStatus<td>PostalAddressType<td>TimeImpactMetric
+<tr><td>DomainDataSystemStatus<td>RecordPatternOffsetunit<td>
+</table>
+
+For details, please review [iana.org/iodef2].
+
 
 ```php
 <?php
@@ -75,22 +88,30 @@ $faker->addProvider( new Rfc7970enums( $faker ));
 
 // Generator
 // a random rfc7970 restriction enumeration value
-$restriction  = $faker->restriction();
+$restriction = $faker->rfc7970Restriction();
 
 ```
 
-###### Sponsorship
+#### Installation
+
+Add the FakerLocRelTypes library to your `composer.json` file:
+
+```
+composer require kigkonsult/fakerlocreltypes
+```
+
+#### Sponsorship
 
 Donation using [paypal.me/kigkonsult] are appreciated.
 For invoice, please e-mail</a>.
 
 
-###### Support
+#### Support
 
 For support go to [github.com FakerLocRelTypes]
 
 
-###### License
+#### License
 
 This project is licensed under the LGPLv3 License
 

@@ -62,7 +62,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->restriction());
+            $this->assertIsString( $faker->rfc7970Restriction());
         } // end foreach
     }
 
@@ -77,7 +77,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->incidentPurpose());
+            $this->assertIsString( $faker->rfc7970IncidentPurpose());
         } // end foreach
     }
 
@@ -92,7 +92,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->IncidentStatus());
+            $this->assertIsString( $faker->rfc7970IncidentStatus());
         } // end foreach
     }
 
@@ -107,7 +107,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->contactRole());
+            $this->assertIsString( $faker->rfc7970ContactRole());
         } // end foreach
     }
 
@@ -122,7 +122,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->contactType());
+            $this->assertIsString( $faker->rfc7970ContactType());
         } // end foreach
     }
 
@@ -137,7 +137,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->registryHandleRegistry());
+            $this->assertIsString( $faker->rfc7970RegistryHandleRegistry());
         } // end foreach
     }
 
@@ -152,7 +152,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->postalAddressType());
+            $this->assertIsString( $faker->rfc7970PostalAddressType());
         } // end foreach
     }
 
@@ -167,7 +167,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->telephoneType());
+            $this->assertIsString( $faker->rfc7970TelephoneType());
         } // end foreach
     }
 
@@ -182,7 +182,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->emailType());
+            $this->assertIsString( $faker->rfc7970EmailType());
         } // end foreach
     }
 
@@ -197,7 +197,22 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->expectationAction());
+            $this->assertIsString( $faker->rfc7970ExpectationAction());
+        } // end foreach
+    }
+
+    /**
+     * Test HistoryItem-action
+     *
+     * @return void
+     */
+    public function testHistoryItemActionsInAllLanguages(): void
+    {
+        foreach( $this->folder as $folder ) {
+            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
+            $faker = Factory::create();
+            $faker->addProvider( new $class( $faker ));
+            $this->assertIsString( $faker->rfc7970HistoryItemAction());
         } // end foreach
     }
 
@@ -212,7 +227,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->discoverySource());
+            $this->assertIsString( $faker->rfc7970DiscoverySource());
         } // end foreach
     }
 
@@ -227,7 +242,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->systemImpactType());
+            $this->assertIsString( $faker->rfc7970SystemImpactType());
         } // end foreach
     }
 
@@ -242,7 +257,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->businessImpactSeverity());
+            $this->assertIsString( $faker->rfc7970BusinessImpactSeverity());
         } // end foreach
     }
 
@@ -257,7 +272,23 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->businessImpactType());
+            $this->assertIsString( $faker->rfc7970BusinessImpactType());
+        } // end foreach
+    }
+
+
+    /**
+     * Test IntendedImpactImpact-type
+     *
+     * @return void
+     */
+    public function testIntendedImpactTypesInAllLanguages(): void
+    {
+        foreach( $this->folder as $folder ) {
+            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
+            $faker = Factory::create();
+            $faker->addProvider( new $class( $faker ));
+            $this->assertIsString( $faker->rfc7970IntendedImpactType());
         } // end foreach
     }
 
@@ -272,7 +303,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->TimeImpactMetric());
+            $this->assertIsString( $faker->rfc7970TimeImpactMetric());
         } // end foreach
     }
 
@@ -287,7 +318,22 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->timeImpactDuration());
+            $this->assertIsString( $faker->rfc7970TimeImpactDuration());
+        } // end foreach
+    }
+
+    /**
+     * Test Counter-duration
+     *
+     * @return void
+     */
+    public function testCounterDurationsInAllLanguages(): void
+    {
+        foreach( $this->folder as $folder ) {
+            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
+            $faker = Factory::create();
+            $faker->addProvider( new $class( $faker ));
+            $this->assertIsString( $faker->rfc7970CounterDuration());
         } // end foreach
     }
 
@@ -302,7 +348,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->confidenceRating());
+            $this->assertIsString( $faker->rfc7970ConfidenceRating());
         } // end foreach
     }
 
@@ -317,7 +363,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->nodeRoleCategory());
+            $this->assertIsString( $faker->rfc7970NodeRoleCategory());
         } // end foreach
     }
 
@@ -332,7 +378,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->systemCategory());
+            $this->assertIsString( $faker->rfc7970SystemCategory());
         } // end foreach
     }
 
@@ -347,7 +393,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->systemOwnership());
+            $this->assertIsString( $faker->rfc7970SystemOwnership());
         } // end foreach
     }
 
@@ -362,7 +408,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->addressCategory());
+            $this->assertIsString( $faker->rfc7970AddressCategory());
         } // end foreach
     }
 
@@ -377,7 +423,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->counterType());
+            $this->assertIsString( $faker->rfc7970CounterType());
         } // end foreach
     }
 
@@ -392,7 +438,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->counterUnit());
+            $this->assertIsString( $faker->rfc7970CounterUnit());
         } // end foreach
     }
 
@@ -407,7 +453,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->domainDataSystemStatus());
+            $this->assertIsString( $faker->rfc7970DomainDataSystemStatus());
         } // end foreach
     }
 
@@ -422,7 +468,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->domainDataDomainStatus());
+            $this->assertIsString( $faker->rfc7970DomainDataDomainStatus());
         } // end foreach
     }
 
@@ -437,7 +483,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->recordPatternType());
+            $this->assertIsString( $faker->rfc7970RecordPatternType());
         } // end foreach
     }
 
@@ -452,7 +498,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->recordPatternOffsetunit());
+            $this->assertIsString( $faker->rfc7970RecordPatternOffsetunit());
         } // end foreach
     }
 
@@ -467,7 +513,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->keyRegistryaction());
+            $this->assertIsString( $faker->rfc7970KeyRegistryaction());
         } // end foreach
     }
 
@@ -482,7 +528,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->hashDataScope());
+            $this->assertIsString( $faker->rfc7970HashDataScope());
         } // end foreach
     }
 
@@ -497,7 +543,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->bulkObservableType());
+            $this->assertIsString( $faker->rfc7970BulkObservableType());
         } // end foreach
     }
 
@@ -512,7 +558,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->indicatorExpressionOperator());
+            $this->assertIsString( $faker->rfc7970IndicatorExpressionOperator());
         } // end foreach
     }
 
@@ -527,7 +573,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->extensionTypeDtype());
+            $this->assertIsString( $faker->rfc7970ExtensionTypeDtype());
         } // end foreach
     }
 
@@ -542,7 +588,21 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->softwareReferenceSpecId());
+            $this->assertIsString( $faker->rfc7970SoftwareReferenceSpecId());
+        } // end foreach
+    }
+    /**
+     * Test SoftwareReference-spec-name
+     *
+     * @return void
+     */
+    public function testSoftwareReferenceSpecNamesInAllLanguages(): void
+    {
+        foreach( $this->folder as $folder ) {
+            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
+            $faker = Factory::create();
+            $faker->addProvider( new $class( $faker ));
+            $this->assertIsString( $faker->rfc7970SoftwareReferenceSpecName());
         } // end foreach
     }
 
@@ -557,7 +617,7 @@ class FakerRfc7970enumsTest extends TestCase
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->softwareReferenceDtype());
+            $this->assertIsString( $faker->rfc7970SoftwareReferenceDtype());
         } // end foreach
     }
 }

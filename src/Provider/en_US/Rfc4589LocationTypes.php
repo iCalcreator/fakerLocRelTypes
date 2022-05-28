@@ -28,14 +28,7 @@ namespace Kigkonsult\FakerLocRelTypes\Provider\en_US;
 
 use Faker\Provider\Base as FakerBase;
 
-/**
- * class LocationTypes
- *
- * replaced by Rfc4589LocationTypes
- * @deprecated
- * @codeCoverageIgnore
- */
-class LocationTypes extends FakerBase
+class Rfc4589LocationTypes extends FakerBase
 {
     /**
      * Location types as found in 'Location Types Registry', https://www.rfc-editor.org/rfc/rfc4589.txt
@@ -100,8 +93,19 @@ class LocationTypes extends FakerBase
      *
      * @return string
      * @deprecated
+     * @codeCoverageIgnore
      */
     public function locationType() : string
+    {
+        return static::randomElement( static::$locationTypes );
+    }
+
+    /**
+     * A random rfc4589 location type (lowercase).
+     *
+     * @return string
+     */
+    public function rfc4589LocationType() : string
     {
         return static::randomElement( static::$locationTypes );
     }
