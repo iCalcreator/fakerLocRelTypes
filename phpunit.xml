@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Location-, Relation- and Incident Object Report enumeration types for PHP Faker
+ Location-, Relation- Media- and Incident Object report types for PHP Faker
 
  This file is a part of FakerLocRelTypes
 
@@ -39,6 +39,7 @@
             <file>./test/FakerRfc4589LocationTest.php</file>
             <file>./test/FakerRfc7970enumsTest.php</file>
             <file>./test/FakerRfc8288RelationTest.php</file>
+            <file>./test/FakerMediaTypesTest.php</file>
         </testsuite>
     </testsuites>
     <coverage>
@@ -46,6 +47,7 @@
             <file>./src/Provider/en_US/Rfc4589LocationTypes.php</file>
             <file>./src/Provider/en_US/Rfc7970enums.php</file>
             <file>./src/Provider/en_US/Rfc8288RelationTypes.php</file>
+            <file>./src/Provider/en_US/MediaTypes.php</file>
         </include>
         <exclude>
             <file>./src/Provider/en_US/LocationTypes.php</file>

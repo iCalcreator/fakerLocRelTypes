@@ -1,5 +1,5 @@
 
-> Location-, Relation- and Incident Object Report enumeration types for PHP Faker
+> Location-, Relation- Media- and Incident Object report types for PHP Faker
 >
 * Location types as found in [rfc4589] 'Location Types Registry'
   * "the types of places a human or end system might be found"
@@ -8,13 +8,18 @@
   * in reference with [rfc8288] Web Linking
   * "...the relationships between resources on the Web ("links")
   and the type of those relationships"
-    
+
+* MediaTypes (MIME-Types) as found in [mediaTypes]
+  * application, audio, font, example, image, message, model, multipart, text, video or any type
+
 * Report enumeration values defined by Incident Object Description Exchange Format ([rfc7970]), 
   * as found in [iana.org/iodef2]
 
 #### Usage
 
 To use this with [Faker], invoke the `Kigkonsult\FakerLocRelTypes` classes as Faker generators.
+
+All generators loadBase are available as static array properties for ad Hoc use.
 
 ###### Rfc4589
 
@@ -55,7 +60,27 @@ $relationType = $faker->rc8288RelationType();
 
 ```
 
-###### Rfc7970 
+###### MediaTypes (MIME-types)
+Split upp in `application`, `audio`, `font`, `example`, `image`, `message`, `model`, `multipart`, `text`, `video` or `any` mediaTypes.
+All generators are suffixed by _mediaType_)
+
+```php
+<?php
+
+use Faker\Factory;
+use Kigkonsult\FakerLocRelTypes\Provider\en_US\MediaTypes;
+
+$faker = Factory::create();
+$faker->addProvider( new MediaTypes( $faker ));
+
+// Generator
+// a random application mediaType
+$applicationType = $faker->applicationMediaType();
+
+```
+
+
+###### Rfc7970
 Rfc7970enums has 38 generators (all prefixed by _rfc7970_) :
 
 <table>
@@ -121,6 +146,7 @@ This project is licensed under the LGPLv3 License
 [github.com FakerLocRelTypes]:https://github.com/iCalcreator/fakerlocreltypes/issues
 [iana.org/iodef2]:https://www.iana.org/assignments/iodef2/iodef2.xhtml
 [Link Relation Types]:https://www.iana.org/assignments/link-relations/link-relations.xhtml
+[mediaTypes]:https://www.iana.org/assignments/media-types/media-types.xhtml
 [rfc4589]:https://www.rfc-editor.org/rfc/rfc4589.txt
 [rfc7970]:https://www.rfc-editor.org/rfc/rfc7970.html
 [rfc8288]:https://www.rfc-editor.org/rfc/rfc8288.html

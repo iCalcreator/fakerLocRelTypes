@@ -1,12 +1,14 @@
 {
   "name": "kigkonsult/fakerlocreltypes",
 
-  "description": "Location-, Relation- and Incident Object report enumeration types for PHP Faker",
+  "description": "Location-, Relation- Media- and Incident Object report types for PHP Faker",
   "keywords": [
     "faker",
     "generator",
     "location",
     "relation",
+    "mediatype",
+    "mimetype",
     "incident",
     "object",
     "report",

@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- and Incident Object report enumeration types for PHP Faker.
+ * Location-, Relation- Media- and Incident Object report types for PHP Faker
  *
  * This file is a part of FakerLocRelTypes
  *
@@ -84,7 +84,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/restriction.csv
      * @var string[]
      */
-    protected static $restrictions = [
+    public static $restrictions = [
         'public',
         'partner',
         'need-to-know',
@@ -125,7 +125,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/incident-purpose.csv
      * @var string[]
      */
-    protected static $incidentPurposes = [
+    public static $incidentPurposes = [
         'partner',
         'traceback',
         'mitigation',
@@ -163,7 +163,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/incident-status.csv
      * @var string[]
      */
-    protected static $incidentStatus = [
+    public static $incidentStatus = [
         'new',
         'in-progress',
         'forwarded',
@@ -200,7 +200,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/contact-role.csv
      * @var string[]
      */
-    protected static $contactRoles = [
+    public static $contactRoles = [
         'reator',
         'reporter',
         'admin',
@@ -249,7 +249,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/contact-type.csv
      * @var string[]
      */
-    protected static $contactTypes = [
+    public static $contactTypes = [
         'person',
         'organization',
         'ext-value'
@@ -284,7 +284,7 @@ class Rfc7970enums extends FakerBase
      *
      * @var string[]
      */
-    protected static $registryHandleRegistries = [
+    public static $registryHandleRegistries = [
         'internic',
         'apnic',
         'arin',
@@ -323,7 +323,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/telephone-type.csv
      * @var string[]
      */
-    protected static $postalAddressTypes = [
+    public static $postalAddressTypes = [
         'street',
         'mailing',
         'ext-value'
@@ -357,7 +357,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/telephone-type.csv
      * @var string[]
      */
-    protected static $telephoneTypes = [
+    public static $telephoneTypes = [
         'wired',
         'mobile',
         'fax',
@@ -393,7 +393,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/email-type.csv
      * @var string[]
      */
-    protected static $emailTypes = [
+    public static $emailTypes = [
         'wired',
         'mobile',
         'fax',
@@ -429,7 +429,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/expectation-action.csv
      * @var string[]
      */
-    protected static $expectationActions = [
+    public static $expectationActions = [
         'nothing',
         'contact-source-site',
         'contact-target-site',
@@ -495,7 +495,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/discovery-source.csv
      * @var string[]
      */
-    protected static $discoverySources = [
+    public static $discoverySources = [
         'nothing',
         'contact-source-site',
         'contact-target-site',
@@ -550,7 +550,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/systemimpact-type.csv
      * @var string[]
      */
-    protected static $systemImpactTypes = [
+    public static $systemImpactTypes = [
         'takeover-account',
         'takeover-service',
         'takeover-system',
@@ -605,7 +605,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/businessimpact-severity.csv
      * @var string[]
      */
-    protected static $businessImpactSeverities = [
+    public static $businessImpactSeverities = [
         'none',
         'low',
         'medium',
@@ -642,7 +642,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/businessimpact-type.csv
      * @var string[]
      */
-    protected static $businessImpactTypes = [
+    public static $businessImpactTypes = [
         'breach-proprietary',
         'breach-privacy',
         'breach-credential',
@@ -699,7 +699,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/timeimpact-metric.csv
      * @var string[]
      */
-    protected static $timeImpactMetrics = [
+    public static $timeImpactMetrics = [
         'labor',
         'elapsed',
         'downtime',
@@ -734,7 +734,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/timeimpact-duration.csv
      * @var string[]
      */
-    protected static $timeImpactdurations = [
+    public static $timeImpactdurations = [
         'second',
         'minute',
         'hour',
@@ -783,7 +783,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/confidence-rating.csv
      * @var string[]
      */
-    protected static $confidenceRating = [
+    public static $confidenceRating = [
         'low',
         'medium',
         'high',
@@ -820,7 +820,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/noderole-category.csv
      * @var string[]
      */
-    protected static $nodeRoleCategories = [
+    public static $nodeRoleCategories = [
         'client',
         'client-enterprise',
         'client-partner',
@@ -905,7 +905,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/system-category.csv
      * @var string[]
      */
-    protected static $systemCategories = [
+    public static $systemCategories = [
         'source',
         'target',
         'intermediate',
@@ -942,7 +942,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/system-ownership.csv
      * @var string[]
      */
-    protected static $systemOwnerships = [
+    public static $systemOwnerships = [
         'organization',
         'personal',
         'partner',
@@ -980,7 +980,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/address-category.csv
      * @var string[]
      */
-    protected static $addressCategories = [
+    public static $addressCategories = [
         'asn',
         'atm',
         'e-mail',
@@ -1024,7 +1024,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/counter-type.csv
      * @var string[]
      */
-    protected static $counterTypes = [
+    public static $counterTypes = [
         'count',
         'peak',
         'average',
@@ -1059,7 +1059,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/counter-unit.csv
      * @var string[]
      */
-    protected static $counterUnits = [
+    public static $counterUnits = [
         'byte',
         'mbit',
         'packet',
@@ -1102,7 +1102,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/domaindata-system-status.csv
      * @var string[]
      */
-    protected static $domainDataSystemStatus = [
+    public static $domainDataSystemStatus = [
         'spoofed',
         'fraudulent',
         'innocent-hacked',
@@ -1139,7 +1139,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/domaindata-domain-status.csv
      * @var string[]
      */
-    protected static $domainDataDomainStatus = [
+    public static $domainDataDomainStatus = [
         'reservedDelegation',
         'assignedAndActive',
         'assignedAndInactive',
@@ -1181,7 +1181,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/recordpattern-type.csv
      * @var string[]
      */
-    protected static $recordPatternTypes = [
+    public static $recordPatternTypes = [
         'regex',
         'binary',
         'xpath',
@@ -1216,7 +1216,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/recordpattern-offsetunit.csv
      * @var string[]
      */
-    protected static $recordPatternOffsetunits = [
+    public static $recordPatternOffsetunits = [
         'line',
         'byte',
         'ext-value'
@@ -1250,7 +1250,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/key-registryaction.csv
      * @var string[]
      */
-    protected static $keyRegistryactions = [
+    public static $keyRegistryactions = [
         'add-key',
         'add-value',
         'delete-key',
@@ -1288,7 +1288,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/hashdata-scope.csv
      * @var string[]
      */
-    protected static $hashDataScopes = [
+    public static $hashDataScopes = [
         'file-contents',
         'file-pe-section',
         'file-pe-iat',
@@ -1328,7 +1328,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/bulkobservable-type.csv
      * @var string[]
      */
-    protected static $bulkObservableTypes = [
+    public static $bulkObservableTypes = [
         'asn',
         'atm',
         'e-mail',
@@ -1387,7 +1387,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/indicatorexpression-operator.csv
      * @var string[]
      */
-    protected static $indicatorExpressionOperators = [
+    public static $indicatorExpressionOperators = [
         'not',
         'and',
         'or',
@@ -1422,7 +1422,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/extensiontype-dtype.csv
      * @var string[]
      */
-    protected static $extensionTypeDtypes = [
+    public static $extensionTypeDtypes = [
         'boolean',
         'byte',
         'bytes',
@@ -1474,7 +1474,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/softwarereference-spec-id.csv
      * @var string[]
      */
-    protected static $softwareReferenceSpecIds = [
+    public static $softwareReferenceSpecIds = [
         'custom',
         'cpe',
         'swid',
@@ -1521,7 +1521,7 @@ class Rfc7970enums extends FakerBase
      * @link https://www.iana.org/assignments/iodef2/softwarereference-dtype.csv
      * @var string[]
      */
-    protected static $softwareReferenceDtypes = [
+    public static $softwareReferenceDtypes = [
         'bytes',
         'integer',
         'real',

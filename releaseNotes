@@ -6,11 +6,16 @@
 2.0.2    all rfc7970 methods prefixed with 'rfc7970'
 2.0.3    correction for error in https://www.iana.org/assignments/iodef2/iodef2.xhtml
          softwarereference-spec-id should be softwarereference-spec-name (both generators exist)
-2.0.4    new IntendedImpact::type, same as BusinessImpact-type
-2.0.5    new HistoryItem::action, same as Expectation-action
-2.0.6    new Counter::duration, same as TimeImpact-duration
+2.0.4    mew IntendedImpact::type, same as BusinessImpact-type
+2.0.5    mew HistoryItem::action, same as Expectation-action
+2.0.6    mew Counter::duration, same as TimeImpact-duration
 
 2.0.7    Generator LocationTypes altered to Rfc4589LocationTypes, methods prefixed by rfc4589
 2.0.8    Generator RelationTypes altered to Rfc8288RelationTypes, methods prefixed by rfc8288
 
+2.0.9    new IndendedImpactSeverity same as BusinessImpactSeverity()
+
 2.2.1    releaseNotes
+
+2.2.2    all collections are public (for ad Hoc use)
+2.2.3    Generator specific mediaTypes (MIME-types)

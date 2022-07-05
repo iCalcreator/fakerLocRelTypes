@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- and Incident Object report enumeration types for PHP Faker
+ * Location-, Relation- Media- and Incident Object report types for PHP Faker
  *
  * This file is a part of FakerLocRelTypes
  *
