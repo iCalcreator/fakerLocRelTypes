@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- Media- and Incident Object report types for PHP Faker
+ * PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
  *
  * This file is a part of FakerLocRelTypes
  *
@@ -24,7 +24,7 @@
  *            You should have received a copy of the GNU Lesser General Public License
  *            along with FakerLocRelTypes. If not, see <https://www.gnu.org/licenses/>.
  */
-namespace Kigkonsult\FakerLocRelTypes\Provider\en_US;
+namespace Kigkonsult\FakerLocRelTypes\Provider;
 
 use Faker\Provider\Base as FakerBase;
 

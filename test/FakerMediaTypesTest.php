@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- Media- and Incident Object report types for PHP Faker
+ * PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
  *
  * This file is a part of FakerLocRelTypes
  *
@@ -27,194 +27,53 @@
 namespace Kigkonsult\FakerLocRelTypes;
 
 use Faker\Factory;
+use Kigkonsult\FakerLocRelTypes\Provider\MediaTypes;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Kigkonsult\FakerLocRelTypes\Provider\MediaTypes
+ */
 class FakerMediaTypesTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    protected static $CLASSPREFIX = 'Kigkonsult\FakerLocRelTypes\Provider\\';
-
-    /**
-     * @var string
-     */
-    protected static $CLASSTOTEST = '\MediaTypes';
-
-
-    /**
-     * @var array|false
-     */
-    protected $folder;
-
-    /**
-     * @return void
-     */
-    public function setUp(): void
-    {
-        static $DIR   = 'src/Provider';
-        static $EXCL  = [ '..', '.' ];
-        $this->folder = array_diff( scandir( $DIR ), $EXCL );
-    }
-
     /**
      * Test application mediaTypes
      *
      * @return void
      */
-    public function testApplicationMediaTypesInAllLanguages(): void
+    public function testAllMediaTypes(): void
     {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->applicationMediaType());
-            $this->assertStringStartsWith( 'application', $faker->applicationMediaType());
-        } // end foreach
-    }
+        $faker = Factory::create();
+        $faker->addProvider( new MediaTypes( $faker ));
 
-    /**
-     * Test audio mediaTypes
-     *
-     * @return void
-     */
-    public function testAudioMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->audioMediaType());
-            $this->assertStringStartsWith( 'audio', $faker->audioMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->applicationMediaType());
+        $this->assertStringStartsWith( 'application', $faker->applicationMediaType());
 
-    /**
-     * Test font mediaTypes
-     *
-     * @return void
-     */
-    public function testFontMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->fontMediaType());
-            $this->assertStringStartsWith( 'font', $faker->fontMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->audioMediaType());
+        $this->assertStringStartsWith( 'audio', $faker->audioMediaType());
 
-    /**
-     * Test image mediaTypes
-     *
-     * @return void
-     */
-    public function testImageMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->imageMediaType());
-            $this->assertStringStartsWith( 'image', $faker->imageMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->fontMediaType());
+        $this->assertStringStartsWith( 'font', $faker->fontMediaType());
 
-    /**
-     * Test message mediaTypes
-     *
-     * @return void
-     */
-    public function testMessageMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->messageMediaType());
-            $this->assertStringStartsWith( 'message', $faker->messageMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->imageMediaType());
+        $this->assertStringStartsWith( 'image', $faker->imageMediaType());
 
-    /**
-     * Test model mediaTypes
-     *
-     * @return void
-     */
-    public function testModelMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->modelMediaType());
-            $this->assertStringStartsWith( 'model', $faker->modelMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->messageMediaType());
+        $this->assertStringStartsWith( 'message', $faker->messageMediaType());
 
-    /**
-     * Test multipart mediaTypes
-     *
-     * @return void
-     */
-    public function testMultipartMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->multipartMediaType());
-            $this->assertStringStartsWith( 'multipart', $faker->multipartMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->modelMediaType());
+        $this->assertStringStartsWith( 'model', $faker->modelMediaType());
 
-    /**
-     * Test text mediaTypes
-     *
-     * @return void
-     */
-    public function testTextMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->textMediaType());
-            $this->assertStringStartsWith( 'text', $faker->textMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->multipartMediaType());
+        $this->assertStringStartsWith( 'multipart', $faker->multipartMediaType());
 
-    /**
-     * Test video mediaTypes
-     *
-     * @return void
-     */
-    public function testVideoMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->videoMediaType());
-            $this->assertStringStartsWith( 'video', $faker->videoMediaType());
-        } // end foreach
-    }
+        $this->assertIsString( $faker->textMediaType());
+        $this->assertStringStartsWith( 'text', $faker->textMediaType());
 
-    /**
-     * Test any mediaType
-     *
-     * @return void
-     */
-    public function testAnyMediaTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = self::$CLASSPREFIX . $folder . self::$CLASSTOTEST;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            for( $x = 0; $x < 27; $x++ ) {
-                $this->assertIsString( $faker->anyMediaType());
-            }
-        } // end foreach
+        $this->assertIsString( $faker->videoMediaType());
+        $this->assertStringStartsWith( 'video', $faker->videoMediaType());
+
+        for( $x = 0; $x < 36; $x++ ) {
+            $this->assertIsString( $faker->anyMediaType());
+        }
     }
 }

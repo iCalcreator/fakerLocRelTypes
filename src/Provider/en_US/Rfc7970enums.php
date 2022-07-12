@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- Media- and Incident Object report types for PHP Faker
+ * PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
  *
  * This file is a part of FakerLocRelTypes
  *
@@ -98,18 +98,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected restriction enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function restriction() : string
-    {
-        return static::randomElement( static::$restrictions );
-    }
-
-    /**
      * A random selected rfc7970 restriction enumeration value.
      *
      * @return string
@@ -136,18 +124,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected incident-purpose enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function incidentPurpose() : string
-    {
-        return static::randomElement( static::$incidentPurposes );
-    }
-
-    /**
      * A random selected rfc7970 incident-purpose enumeration value.
      *
      * @return string
@@ -171,18 +147,6 @@ class Rfc7970enums extends FakerBase
         'future',
         'ext-value'
     ];
-
-    /**
-     * A random selected incident-status enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function incidentStatus() : string
-    {
-        return static::randomElement( static::$incidentStatus );
-    }
 
     /**
      * A random selected rfc7970 incident-status enumeration value.
@@ -222,18 +186,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected contact-role enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function contactRole() : string
-    {
-        return static::randomElement( static::$contactRoles );
-    }
-
-    /**
      * A random selected rfc7970 contact-role enumeration value.
      *
      * @return string
@@ -254,18 +206,6 @@ class Rfc7970enums extends FakerBase
         'organization',
         'ext-value'
     ];
-
-    /**
-     * A random selected contact-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function contactType() : string
-    {
-        return static::randomElement( static::$contactTypes );
-    }
 
     /**
      * A random selected rfc7970 contact-type enumeration value.
@@ -296,18 +236,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected registryHandle-registry enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function registryHandleRegistry() : string
-    {
-        return static::randomElement( static::$registryHandleRegistries );
-    }
-
-    /**
      * A random selected rfc7970 registryHandle-registry enumeration value.
      *
      * @return string
@@ -328,18 +256,6 @@ class Rfc7970enums extends FakerBase
         'mailing',
         'ext-value'
     ];
-
-    /**
-     * A random selected postalAddress-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function postalAddressType() : string
-    {
-        return static::randomElement( static::$postalAddressTypes );
-    }
 
     /**
      * A random selected rfc7970 postalAddress-type enumeration value.
@@ -366,18 +282,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected telephone-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function telephoneType() : string
-    {
-        return static::randomElement( static::$telephoneTypes );
-    }
-
-    /**
      * A random selected rfc7970 telephone-type enumeration value.
      *
      * @return string
@@ -400,18 +304,6 @@ class Rfc7970enums extends FakerBase
         'hotline',
         'ext-value'
     ];
-
-    /**
-     * A random selected email-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function emailType() : string
-    {
-        return static::randomElement( static::$emailTypes );
-    }
 
     /**
      * A random selected rfc7970 email-type enumeration value.
@@ -455,18 +347,6 @@ class Rfc7970enums extends FakerBase
         'other',
         'ext-value'
     ];
-
-    /**
-     * A random selected expectation-action enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function expectationAction() : string
-    {
-        return static::randomElement( static::$expectationActions );
-    }
 
     /**
      * A random selected rfc7970 expectation-action enumeration value.
@@ -523,18 +403,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected discovery-source enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function discoverySource() : string
-    {
-        return static::randomElement( static::$discoverySources );
-    }
-
-    /**
      * A random selected rfc7970 discovery-source enumeration value.
      *
      * @return string
@@ -578,18 +446,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected systemImpact-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function systemImpactType() : string
-    {
-        return static::randomElement( static::$systemImpactTypes );
-    }
-
-    /**
      * A random selected rfc7970 systemImpact-type enumeration value.
      *
      * @return string
@@ -613,18 +469,6 @@ class Rfc7970enums extends FakerBase
         'unknown',
         'ext-value'
     ];
-
-    /**
-     * A random selected businessImpact-severity enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function businessImpactSeverity() : string
-    {
-        return static::randomElement( static::$businessImpactSeverities );
-    }
 
     /**
      * A random selected rfc7970 businessImpact-severity enumeration value.
@@ -658,18 +502,6 @@ class Rfc7970enums extends FakerBase
         'unknown',
         'ext-value'
     ];
-
-    /**
-     * A random selected businessImpact-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function businessImpactType() : string
-    {
-        return static::randomElement( static::$businessImpactTypes );
-    }
 
     /**
      * A random selected rfc7970 businessImpact-type enumeration value.
@@ -707,18 +539,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected timeImpact-metric enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function timeImpactMetric() : string
-    {
-        return static::randomElement( static::$timeImpactMetrics );
-    }
-
-    /**
      * A random selected rfc7970 timeImpact-metric enumeration value.
      *
      * @return string
@@ -744,18 +564,6 @@ class Rfc7970enums extends FakerBase
         'year',
         'ext-value'
     ];
-
-    /**
-     * A random selected timeImpact-duration enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function timeImpactDuration() : string
-    {
-        return static::randomElement( static::$timeImpactdurations );
-    }
 
     /**
      * A random selected rfc7970 timeImpact-duration enumeration value.
@@ -791,18 +599,6 @@ class Rfc7970enums extends FakerBase
         'unknown',
         'ext-value'
     ];
-
-    /**
-     * A random selected confidence-rating enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function confidenceRating() : string
-    {
-        return static::randomElement( static::$confidenceRating );
-    }
 
     /**
      * A random selected rfc7970 confidence-rating enumeration value.
@@ -878,18 +674,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected nodeRole-category enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function nodeRoleCategory() : string
-    {
-        return static::randomElement( static::$nodeRoleCategories );
-    }
-
-    /**
      * A random selected rfc7970 nodeRole-category enumeration value.
      *
      * @return string
@@ -913,18 +697,6 @@ class Rfc7970enums extends FakerBase
         'infrastructure',
         'ext-value'
     ];
-
-    /**
-     * A random selected system-category enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function systemCategory() : string
-    {
-        return static::randomElement( static::$systemCategories );
-    }
 
     /**
      * A random selected rfc7970 system-category enumeration value.
@@ -951,18 +723,6 @@ class Rfc7970enums extends FakerBase
         'unknown',
         'ext-value'
     ];
-
-    /**
-     * A random selected system-ownership enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function systemOwnership() : string
-    {
-        return static::randomElement( static::$systemOwnerships );
-    }
 
     /**
      * A random selected rfc7970system-ownership enumeration value.
@@ -997,18 +757,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected address-category enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function addressCategory() : string
-    {
-        return static::randomElement( static::$addressCategories );
-    }
-
-    /**
      * A random selected rfc7970 address-category enumeration value.
      *
      * @return string
@@ -1030,18 +778,6 @@ class Rfc7970enums extends FakerBase
         'average',
         'ext-value'
     ];
-
-    /**
-     * A random selected counter-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function counterType() : string
-    {
-        return static::randomElement( static::$counterTypes );
-    }
 
     /**
      * A random selected rfc7970 counter-type enumeration value.
@@ -1075,18 +811,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected counter-unit enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function counterUnit() : string
-    {
-        return static::randomElement( static::$counterUnits );
-    }
-
-    /**
      * A random selected rfc7970 counter-unit enumeration value.
      *
      * @return string
@@ -1110,18 +834,6 @@ class Rfc7970enums extends FakerBase
         'unknown',
         'ext-value'
     ];
-
-    /**
-     * A random selected domainData-system-status enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function domainDataSystemStatus() : string
-    {
-        return static::randomElement( static::$domainDataSystemStatus );
-    }
 
     /**
      * A random selected rfc7970 domainData-system-status enumeration value.
@@ -1154,18 +866,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected domainData-domain-status enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function domainDataDomainStatus() : string
-    {
-        return static::randomElement( static::$domainDataDomainStatus );
-    }
-
-    /**
      * A random selected rfc7970 domainData-domain-status enumeration value.
      *
      * @return string
@@ -1189,18 +889,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected recordPattern-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function recordPatternType() : string
-    {
-        return static::randomElement( static::$recordPatternTypes );
-    }
-
-    /**
      * A random selected rfc7970 recordPattern-type enumeration value.
      *
      * @return string
@@ -1221,18 +909,6 @@ class Rfc7970enums extends FakerBase
         'byte',
         'ext-value'
     ];
-
-    /**
-     * A random selected recordPattern-offsetunit enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function recordPatternOffsetunit() : string
-    {
-        return static::randomElement( static::$recordPatternOffsetunits );
-    }
 
     /**
      * A random selected rfc7970 recordPattern-offsetunit enumeration value.
@@ -1261,18 +937,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected key-registryaction enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function keyRegistryaction() : string
-    {
-        return static::randomElement( static::$keyRegistryactions );
-    }
-
-    /**
      * A random selected rfc7970 key-registryaction enumeration value.
      *
      * @return string
@@ -1299,18 +963,6 @@ class Rfc7970enums extends FakerBase
         'email-body-hash',
         'ext-value'
     ];
-
-    /**
-     * A random selected hashData-scope enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function hashDataScope() : string
-    {
-        return static::randomElement( static::$hashDataScopes );
-    }
 
     /**
      * A random selected rfc7970hashData-scope enumeration value.
@@ -1360,18 +1012,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected bulkObservable-type enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function bulkObservableType() : string
-    {
-        return static::randomElement( static::$bulkObservableTypes );
-    }
-
-    /**
      * A random selected rfc7970bulkObservable-type enumeration value.
      *
      * @return string
@@ -1393,18 +1033,6 @@ class Rfc7970enums extends FakerBase
         'or',
         'xor'
     ];
-
-    /**
-     * A random selected indicatorExpression-operator enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function indicatorExpressionOperator() : string
-    {
-        return static::randomElement( static::$indicatorExpressionOperators );
-    }
 
     /**
      * A random selected rfc7970 indicatorExpression-operator enumeration value.
@@ -1447,18 +1075,6 @@ class Rfc7970enums extends FakerBase
     ];
 
     /**
-     * A random selected extensionType-dtype enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function extensionTypeDtype() : string
-    {
-        return static::randomElement( static::$extensionTypeDtypes );
-    }
-
-    /**
      * A random selected rfc7970 extensionType-dtype enumeration value.
      *
      * @return string
@@ -1480,18 +1096,6 @@ class Rfc7970enums extends FakerBase
         'swid',
         'ext-value'
     ];
-
-    /**
-     * A random selected softwareReference-spec-id enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function softwareReferenceSpecId() : string
-    {
-        return static::randomElement( static::$softwareReferenceSpecIds );
-    }
 
     /**
      * A random selected rfc7970 softwareReference-spec-name enumeration value.
@@ -1529,18 +1133,6 @@ class Rfc7970enums extends FakerBase
         'xml',
         'ext-value'
     ];
-
-    /**
-     * A random selected softwareReference-dtype enumeration value.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function softwareReferenceDtype() : string
-    {
-        return static::randomElement( static::$softwareReferenceDtypes );
-    }
 
     /**
      * A random selected rfc7970 softwareReference-dtype enumeration value.

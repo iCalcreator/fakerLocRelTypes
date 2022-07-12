@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- Media- and Incident Object report types for PHP Faker
+ * PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
  *
  * This file is a part of FakerLocRelTypes
  *
@@ -36,11 +36,10 @@ class FakerRfc7970enumsTest extends TestCase
      */
     protected static $CLASSTOTESTFMT = 'Kigkonsult\FakerLocRelTypes\Provider\%s\Rfc7970enums';
 
-
     /**
-     * @var array|false
+     * @var string[]
      */
-    protected $folder;
+    protected $class = [];
 
     /**
      * @return void
@@ -49,574 +48,137 @@ class FakerRfc7970enumsTest extends TestCase
     {
         static $DIR   = 'src/Provider';
         static $EXCL  = [ '..', '.' ];
-        $this->folder = array_diff( scandir( $DIR ), $EXCL );
-    }
-
-    /**
-     * Test Restriction
-     * @return void
-     */
-    public function testRestrictionsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
+        $this->classes = [];
+        foreach( array_diff( scandir( $DIR ), $EXCL ) as $folder ) {
             $class = sprintf( self::$CLASSTOTESTFMT, $folder );
+            if( class_exists( $class )) {
+                $this->classes[] = $class;
+            }
+        }
+    }
+
+    /**
+     * Test ALL
+     * @return void
+     */
+    public function testRestrictions(): void
+    {
+        foreach( $this->classes as $class ) {
             $faker = Factory::create();
             $faker->addProvider( new $class( $faker ));
+
+            // Test Restriction
             $this->assertIsString( $faker->rfc7970Restriction());
-        } // end foreach
-    }
 
-    /**
-     * Test Incident-purpose
-     *
-     * @return void
-     */
-    public function testIncidentPurposesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Incident-purpose
             $this->assertIsString( $faker->rfc7970IncidentPurpose());
-        } // end foreach
-    }
 
-    /**
-     * Test Incident-status
-     *
-     * @return void
-     */
-    public function testIncidentStatusInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Incident-status
             $this->assertIsString( $faker->rfc7970IncidentStatus());
-        } // end foreach
-    }
 
-    /**
-     * Test Contact-role
-     *
-     * @return void
-     */
-    public function testContactRolesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Contact-role
             $this->assertIsString( $faker->rfc7970ContactRole());
-        } // end foreach
-    }
 
-    /**
-     * Test Contact-type
-     *
-     * @return void
-     */
-    public function testContactTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Contact-type
             $this->assertIsString( $faker->rfc7970ContactType());
-        } // end foreach
-    }
 
-    /**
-     * Test RegistryHandle-registry
-     *
-     * @return void
-     */
-    public function testRegistryHandleRegistrysInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test RegistryHandle-registry
             $this->assertIsString( $faker->rfc7970RegistryHandleRegistry());
-        } // end foreach
-    }
 
-    /**
-     * Test PostalAddress-type
-     *
-     * @return void
-     */
-    public function testPostalAddressTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test PostalAddress-type
             $this->assertIsString( $faker->rfc7970PostalAddressType());
-        } // end foreach
-    }
 
-    /**
-     * Test Telephone-type
-     *
-     * @return void
-     */
-    public function testTelephoneTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Telephone-type
             $this->assertIsString( $faker->rfc7970TelephoneType());
-        } // end foreach
-    }
 
-    /**
-     * Test Email-type
-     *
-     * @return void
-     */
-    public function testEmailTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Email-type
             $this->assertIsString( $faker->rfc7970EmailType());
-        } // end foreach
-    }
 
-    /**
-     * Test Expectation-action
-     *
-     * @return void
-     */
-    public function testExpectationActionsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Expectation-action
             $this->assertIsString( $faker->rfc7970ExpectationAction());
-        } // end foreach
-    }
 
-    /**
-     * Test HistoryItem-action
-     *
-     * @return void
-     */
-    public function testHistoryItemActionsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test HistoryItem-action
             $this->assertIsString( $faker->rfc7970HistoryItemAction());
-        } // end foreach
-    }
 
-    /**
-     * Test Discovery-source
-     *
-     * @return void
-     */
-    public function testDiscoverySourcesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Discovery-source
             $this->assertIsString( $faker->rfc7970DiscoverySource());
-        } // end foreach
-    }
 
-    /**
-     * Test SystemImpact-type
-     *
-     * @return void
-     */
-    public function testSystemImpactTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test SystemImpact-type
             $this->assertIsString( $faker->rfc7970SystemImpactType());
-        } // end foreach
-    }
 
-    /**
-     * Test BusinessImpact-severity
-     *
-     * @return void
-     */
-    public function testBusinessImpactSeveritysInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test BusinessImpact-severity
             $this->assertIsString( $faker->rfc7970BusinessImpactSeverity());
-        } // end foreach
-    }
 
-    /**
-     * Test BusinessImpact-type
-     *
-     * @return void
-     */
-    public function testBusinessImpactTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test BusinessImpact-type
             $this->assertIsString( $faker->rfc7970BusinessImpactType());
-        } // end foreach
-    }
 
-
-    /**
-     * Test IntendedImpactImpact-type
-     *
-     * @return void
-     */
-    public function testIntendedImpactTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test IntendedImpactImpact-type
             $this->assertIsString( $faker->rfc7970IntendedImpactType());
-        } // end foreach
-    }
 
-    /**
-     * Test TimeImpact-metric
-     *
-     * @return void
-     */
-    public function testTimeImpactMetricsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test TimeImpact-metric
             $this->assertIsString( $faker->rfc7970TimeImpactMetric());
-        } // end foreach
-    }
 
-    /**
-     * Test TimeImpact-duration
-     *
-     * @return void
-     */
-    public function testTimeImpactDurationsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test TimeImpact-duration
             $this->assertIsString( $faker->rfc7970TimeImpactDuration());
-        } // end foreach
-    }
 
-    /**
-     * Test Counter-duration
-     *
-     * @return void
-     */
-    public function testCounterDurationsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Counter-duration
             $this->assertIsString( $faker->rfc7970CounterDuration());
-        } // end foreach
-    }
 
-    /**
-     * Test Confidence-rating
-     *
-     * @return void
-     */
-    public function testConfidenceRatingsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Confidence-rating
             $this->assertIsString( $faker->rfc7970ConfidenceRating());
-        } // end foreach
-    }
 
-    /**
-     * Test NodeRole-category
-     *
-     * @return void
-     */
-    public function testNodeRoleCategorysInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test NodeRole-category
             $this->assertIsString( $faker->rfc7970NodeRoleCategory());
-        } // end foreach
-    }
 
-    /**
-     * Test SystemCategory
-     *
-     * @return void
-     */
-    public function testSystemCategorysInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test SystemCategory
             $this->assertIsString( $faker->rfc7970SystemCategory());
-        } // end foreach
-    }
 
-    /**
-     * Test System-ownership
-     *
-     * @return void
-     */
-    public function testSystemOwnershipsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test System-ownership
             $this->assertIsString( $faker->rfc7970SystemOwnership());
-        } // end foreach
-    }
 
-    /**
-     * Test Address-category
-     *
-     * @return void
-     */
-    public function testAddressCategorysInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Address-category
             $this->assertIsString( $faker->rfc7970AddressCategory());
-        } // end foreach
-    }
 
-    /**
-     * Test Counter-type
-     *
-     * @return void
-     */
-    public function testCounterTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Counter-type
             $this->assertIsString( $faker->rfc7970CounterType());
-        } // end foreach
-    }
 
-    /**
-     * Test Counter-unit
-     *
-     * @return void
-     */
-    public function testCounterUnitsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Counter-unit
             $this->assertIsString( $faker->rfc7970CounterUnit());
-        } // end foreach
-    }
 
-    /**
-     * Test DomainData-system-status
-     *
-     * @return void
-     */
-    public function testDomainDataSystemStatusInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test DomainData-system-status
             $this->assertIsString( $faker->rfc7970DomainDataSystemStatus());
-        } // end foreach
-    }
 
-    /**
-     * Test DomainData-domain-status
-     *
-     * @return void
-     */
-    public function testDomainDataDomainStatusInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test DomainData-domain-status
             $this->assertIsString( $faker->rfc7970DomainDataDomainStatus());
-        } // end foreach
-    }
 
-    /**
-     * Test RecordPattern-type
-     *
-     * @return void
-     */
-    public function testRecordPatternTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test RecordPattern-type
             $this->assertIsString( $faker->rfc7970RecordPatternType());
-        } // end foreach
-    }
 
-    /**
-     * Test RecordPattern-offsetunit
-     *
-     * @return void
-     */
-    public function testRecordPatternOffsetunitsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test RecordPattern-offsetunit
             $this->assertIsString( $faker->rfc7970RecordPatternOffsetunit());
-        } // end foreach
-    }
 
-    /**
-     * Test Key-registryaction
-     *
-     * @return void
-     */
-    public function testKeyRegistryactionsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test Key-registryaction
             $this->assertIsString( $faker->rfc7970KeyRegistryaction());
-        } // end foreach
-    }
 
-    /**
-     * Test HashData-scope
-     *
-     * @return void
-     */
-    public function testHashDataScopesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test HashData-scope
             $this->assertIsString( $faker->rfc7970HashDataScope());
-        } // end foreach
-    }
 
-    /**
-     * Test BulkObservable-type
-     *
-     * @return void
-     */
-    public function testBulkObservableTypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test BulkObservable-type
             $this->assertIsString( $faker->rfc7970BulkObservableType());
-        } // end foreach
-    }
 
-    /**
-     * Test IndicatorExpression-operator
-     *
-     * @return void
-     */
-    public function testIndicatorExpressionOperatorsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test IndicatorExpression-operator
             $this->assertIsString( $faker->rfc7970IndicatorExpressionOperator());
-        } // end foreach
-    }
 
-    /**
-     * Test ExtensionType-dtype
-     *
-     * @return void
-     */
-    public function testExtensionTypeDtypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test ExtensionType-dtype
             $this->assertIsString( $faker->rfc7970ExtensionTypeDtype());
-        } // end foreach
-    }
 
-    /**
-     * Test SoftwareReference-spec-id
-     *
-     * @return void
-     */
-    public function testSoftwareReferenceSpecIdsInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test SoftwareReference-spec-id
             $this->assertIsString( $faker->rfc7970SoftwareReferenceSpecId());
-        } // end foreach
-    }
-    /**
-     * Test SoftwareReference-spec-name
-     *
-     * @return void
-     */
-    public function testSoftwareReferenceSpecNamesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
-            $this->assertIsString( $faker->rfc7970SoftwareReferenceSpecName());
-        } // end foreach
-    }
 
-    /**
-     * Test SoftwareReference-dtype
-     *
-     * @return void
-     */
-    public function testSoftwareReferenceDtypesInAllLanguages(): void
-    {
-        foreach( $this->folder as $folder ) {
-            $class = sprintf( self::$CLASSTOTESTFMT, $folder );;
-            $faker = Factory::create();
-            $faker->addProvider( new $class( $faker ));
+            // Test SoftwareReference-spec-name
+            $this->assertIsString( $faker->rfc7970SoftwareReferenceSpecName());
+
+            // Test SoftwareReference-dtype
             $this->assertIsString( $faker->rfc7970SoftwareReferenceDtype());
         } // end foreach
     }

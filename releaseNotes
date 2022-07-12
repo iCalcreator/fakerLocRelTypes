@@ -19,3 +19,7 @@
 
 2.2.2    all collections are public (for ad Hoc use)
 2.2.3    Generator specific mediaTypes (MIME-types)
+
+2.4.1    Previously deprecated files and methds are removed
+2.5.1    MediaTypes moved to Provider
+2.5.2    Provider SchemaUri added

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Location-, Relation- Media- and Incident Object report types for PHP Faker
+ PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
 
  This file is a part of FakerLocRelTypes
 
@@ -36,23 +36,17 @@
          verbose="true">
     <testsuites>
         <testsuite name="The Tests">
-            <file>./test/FakerRfc4589LocationTest.php</file>
-            <file>./test/FakerRfc7970enumsTest.php</file>
-            <file>./test/FakerRfc8288RelationTest.php</file>
-            <file>./test/FakerMediaTypesTest.php</file>
+            <file>test/FakerMediaTypesTest.php</file>
+            <file>test/FakerRfc4589LocationTypesTest.php</file>
+            <file>test/FakerRfc7970enumsTest.php</file>
+            <file>test/FakerRfc8288RelationTypesTest.php</file>
+            <file>test/FakerSchemaURITest.php</file>
         </testsuite>
     </testsuites>
     <coverage>
         <include>
-            <file>./src/Provider/en_US/Rfc4589LocationTypes.php</file>
-            <file>./src/Provider/en_US/Rfc7970enums.php</file>
-            <file>./src/Provider/en_US/Rfc8288RelationTypes.php</file>
-            <file>./src/Provider/en_US/MediaTypes.php</file>
+            <directory suffix=".php">src</directory>
         </include>
-        <exclude>
-            <file>./src/Provider/en_US/LocationTypes.php</file>
-            <file>./src/Provider/en_US/RelationTypes.php</file>
-        </exclude>
         <!-- Require the PHP Xdebug (2.7.0 or later) and tokenizer extensions-->
         <!-- Remove or comment after your own choice-->
         <!-- Note, all output in report/logging will be saved in 'testDocs' folder -->
@@ -75,4 +69,8 @@
         <!-- testdoxXml outputFile="testDocs/testdox.xml"/ -->
         <text outputFile="testDocs/logfile.txt"/>
     </logging>
+    <php>
+        <!-- Display SchemaUri or not (0, remove or comment) -->
+        <var name="schemaUriDisp" value="1"/>
+    </php>
 </phpunit>

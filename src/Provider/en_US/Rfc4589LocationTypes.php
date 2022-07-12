@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- Media- and Incident Object report types for PHP Faker
+ * PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
  *
  * This file is a part of FakerLocRelTypes
  *
@@ -87,18 +87,6 @@ class Rfc4589LocationTypes extends FakerBase
         'water',
         'watercraft'
     ];
-
-    /**
-     * A random location type (lowercase).
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function locationType() : string
-    {
-        return static::randomElement( static::$locationTypes );
-    }
 
     /**
      * A random rfc4589 location type (lowercase).

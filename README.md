@@ -1,11 +1,10 @@
 
-> Location-, Relation- Media- and Incident Object report types for PHP Faker
+> PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
 >
 * Location types as found in [rfc4589] 'Location Types Registry'
   * "the types of places a human or end system might be found"
 
-* Link Relation Types as found in [Link Relation Types]
-  * in reference with [rfc8288] Web Linking
+* Link Relation Types as found in [Link Relation Types] - in reference with [rfc8288] Web Linking
   * "...the relationships between resources on the Web ("links")
   and the type of those relationships"
 
@@ -15,17 +14,20 @@
 * Report enumeration values defined by Incident Object Description Exchange Format ([rfc7970]), 
   * as found in [iana.org/iodef2]
 
+* a collection of schema URIs generators
+  * found in [List_of_URI_schemes] 
+
 #### Usage
 
 To use this with [Faker], invoke the `Kigkonsult\FakerLocRelTypes` classes as Faker generators.
-
-All generators loadBase are available as static array properties for ad Hoc use.
 
 ###### Rfc4589
 
 
 Rfc4589LocationTypes has only one generator.
 For details, please review [rfc4589].
+The (static) Rfc4589LocationTypes::$locationTypes is available for 'ad Hoc' use.
+
 ```php
 <?php
 
@@ -44,6 +46,8 @@ $locationType = $faker->rfc4589LcationType();
 
 Rfc8288RelationTypes has only one generator.
 For details, please review [Link Relation Types].
+The (static) Rfc8288RelationTypes::$relationTypes is available for 'ad Hoc' use.
+
 
 ```php
 <?php
@@ -61,14 +65,20 @@ $relationType = $faker->rc8288RelationType();
 ```
 
 ###### MediaTypes (MIME-types)
-Split upp in `application`, `audio`, `font`, `example`, `image`, `message`, `model`, `multipart`, `text`, `video` or `any` mediaTypes.
-All generators are suffixed by _mediaType_)
+
+The mediaTypes generators are<br>`application`, `audio`, `font`, `example`, `image`, `message`, `model`, `multipart`, `text`, `video` or `any`.
+
+All generator method names are suffixed by _MediaType_.
+The generator method `anyMediatyoe` returns any mediaType.
+For details, please review [mediaTypes].
+The (static) MediaTypes::`$<mediaType>` sources are available for 'ad Hoc' use.
+
 
 ```php
 <?php
 
 use Faker\Factory;
-use Kigkonsult\FakerLocRelTypes\Provider\en_US\MediaTypes;
+use Kigkonsult\FakerLocRelTypes\Provider\MediaTypes;
 
 $faker = Factory::create();
 $faker->addProvider( new MediaTypes( $faker ));
@@ -81,7 +91,8 @@ $applicationType = $faker->applicationMediaType();
 
 
 ###### Rfc7970
-Rfc7970enums has 38 generators (all prefixed by _rfc7970_) :
+Rfc7970enums has 38 generator methods, all prefixed by _rfc7970_ :
+For details, please review [iana.org/iodef2].
 
 <table>
 <tr><td>AddressCategory<td>EmailType<td>RecordPatternType
@@ -99,8 +110,6 @@ Rfc7970enums has 38 generators (all prefixed by _rfc7970_) :
 <tr><td>DomainDataSystemStatus<td>RecordPatternOffsetunit<td>
 </table>
 
-For details, please review [iana.org/iodef2].
-
 
 ```php
 <?php
@@ -114,6 +123,42 @@ $faker->addProvider( new Rfc7970enums( $faker ));
 // Generator
 // a random rfc7970 restriction enumeration value
 $restriction = $faker->rfc7970Restriction();
+
+```
+###### SchemaURIs
+
+Supporting schema URIs :<br>
+`cid`, `data`, `dns`*, `fax`, `feed`, `ftp`*, 
+`geo`*, `imap`, `http`, `https`, `ldap`*, `ldaps`*, 
+`mailto`*, `mid`, `news`, `nntp`, `payto`*, `pop`, 
+`rsync`, `sftp`*, `snews`, `smb`*, `ssh`*, `tel`, 
+`telnet`*, `urnUuid`, `vnc`*, `webcal`, `xmpp`* or `any`.
+
+All generator method names are suffixed by _Uri_.
+The generator method `anyUri` returns any schema URI.
+
+*: without arg, method invoke returns simpler format output, one arg, **true**, expanded. 
+
+For details, please review [List_of_URI_schemes].
+
+```php
+<?php
+
+use Faker\Factory;
+use Kigkonsult\FakerLocRelTypes\Provider\SchemaURI;
+
+$faker = Factory::create();
+$faker->addProvider( new SchemaURI( $faker ));
+
+// Generator examples
+
+// a random tel schema Uri
+// generate a tel schema Uri like "tel:+13859966391"
+$telUri = $faker->telUri();
+
+// a random vnc (extended) schema Uri
+// generate a vnc schema Uri like "vnc://nhessel@veniam.schmeler.com:5594?ConnectionName=minima"
+$vncUri = $faker->vncUri( true );
 
 ```
 
@@ -144,6 +189,7 @@ This project is licensed under the LGPLv3 License
 [Composer]:https://getcomposer.org/
 [Faker]:https://github.com/fakerphp/faker
 [github.com FakerLocRelTypes]:https://github.com/iCalcreator/fakerlocreltypes/issues
+[List_of_URI_schemes]:https://en.wikipedia.org/wiki/List_of_URI_schemes
 [iana.org/iodef2]:https://www.iana.org/assignments/iodef2/iodef2.xhtml
 [Link Relation Types]:https://www.iana.org/assignments/link-relations/link-relations.xhtml
 [mediaTypes]:https://www.iana.org/assignments/media-types/media-types.xhtml

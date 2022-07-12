@@ -1,6 +1,6 @@
 <?php
 /**
- * Location-, Relation- Media- and Incident Object report types for PHP Faker
+ * PHP Faker Location-, Relation-, Media-, Incident Object report types and schemaURIs
  *
  * This file is a part of FakerLocRelTypes
  *
@@ -163,18 +163,6 @@ class Rfc8288RelationTypes extends FakerBase
         'working-copy',
         'working-copy-of'
     ];
-
-    /**
-     * A random relation type.
-     *
-     * @return string
-     * @deprecated
-     * @codeCoverageIgnore
-     */
-    public function relationType() : string
-    {
-        return static::randomElement( static::$relationTypes );
-    }
 
     /**
      * A random rfc8288 relation type.
