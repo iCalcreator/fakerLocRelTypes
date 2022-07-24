@@ -69,7 +69,7 @@ $relationType = $faker->rc8288RelationType();
 The mediaTypes generators are<br>`application`, `audio`, `font`, `example`, `image`, `message`, `model`, `multipart`, `text`, `video` or `any`.
 
 All generator method names are suffixed by _MediaType_.
-The generator method `anyMediatyoe` returns any mediaType.
+The generator method `anyMediatyoe` returns a random mediaType.
 For details, please review [mediaTypes].
 The (static) MediaTypes::`$<mediaType>` sources are available for 'ad Hoc' use.
 
@@ -128,14 +128,14 @@ $restriction = $faker->rfc7970Restriction();
 ###### SchemaURIs
 
 Supporting schema URIs :<br>
-`cid`, `data`, `dns`*, `fax`, `feed`, `ftp`*, 
-`geo`*, `imap`, `http`, `https`, `ldap`*, `ldaps`*, 
-`mailto`*, `mid`, `news`, `nntp`, `payto`*, `pop`, 
-`rsync`, `sftp`*, `snews`, `smb`*, `ssh`*, `tel`, 
-`telnet`*, `urnUuid`, `vnc`*, `webcal`, `xmpp`* or `any`.
+`cid`, `data`, `dns` *, `fax`, `feed`, `ftp` *, 
+`geo` *, `imap`, `http`, `https`, `ldap` *, `ldaps` *, 
+`mailto` *, `mid`, `news`, `nntp`, `payto` *, `pop`, 
+`rsync`, `sftp` *, `snews`, `smb` *, `ssh` *, `tel`, 
+`telnet` *, `urnUuid`, `vnc` *, `webcal`, `xmpp` * or `any`.
 
 All generator method names are suffixed by _Uri_.
-The generator method `anyUri` returns any schema URI.
+The generator method `anyUri` returns a random schema URI.
 
 *: without arg, method invoke returns simpler format output, one arg, **true**, expanded. 
 
